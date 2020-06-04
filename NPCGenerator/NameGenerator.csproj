@@ -55,5 +55,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PersonalityGenerator\PersonalityGenerator.csproj">
+      <Project>{7929377b-ff2b-45a6-b86a-657270a2af5b}</Project>
+      <Name>PersonalityGenerator</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{76BF4F3B-C0EB-4AD2-ABE4-341ADDEC524E}</ProjectGuid>
+    <ProjectGuid>{7929377B-FF2B-45A6-B86A-657270A2AF5B}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>NameGenerator</RootNamespace>
-    <AssemblyName>NameGenerator</AssemblyName>
+    <RootNamespace>PersonalityGenerator</RootNamespace>
+    <AssemblyName>PersonalityGenerator</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,10 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DwarvenNameGenerator.cs" />
-    <Compile Include="GenerateName.cs" />
-    <Compile Include="HumanNameGenerator.cs" />
-    <Compile Include="NameGenerator.cs" />
+    <Compile Include="IdealsGenerator.cs" />
+    <Compile Include="MainTraitsGenerator.cs" />
+    <Compile Include="MinorTraitsGenerator.cs" />
+    <Compile Include="Personality.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

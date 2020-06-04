@@ -1,11 +1,10 @@
-﻿//using NameGenerator;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NPCGenerator
+namespace NameGenerator
 {
     class Program
     {
@@ -47,6 +46,7 @@ namespace NPCGenerator
                         if (race.Equals(raceInList, StringComparison.InvariantCultureIgnoreCase))
                         {
                             accept = true;
+                            break;
                         }
                         else
                         {
