@@ -31,7 +31,7 @@ namespace NameGenerator
             // Chance to get full name from list above
             // breaks out if using full name from list
             var fullName = random.Next(1, 5);
-            if (fullName == 5)
+            if (fullName >= 4)
             {
                 createdName = maleNames[random.Next(0, maleNames.Count - 1)];
                 var familyName = " " + GenerateFamilyName();
@@ -92,11 +92,11 @@ namespace NameGenerator
         {
             // Chance to get full name from list above
             // breaks out if using full name from list
-            var fullName = random.Next(0, 5);
-            if (fullName == 10)
+            var fullName = random.Next(1, 5);
+            if (fullName >= 4)
             {
-                createdName = familyNames[random.Next(0, maleNames.Count - 1)];
-                var familyName = " " + GenerateFamilyName();
+                // TODO: Fix Duplicating when in here
+                var familyName = " " + familyNames[random.Next(0, maleNames.Count - 1)];
                 createdName += familyName;
                 return createdName;
             }
