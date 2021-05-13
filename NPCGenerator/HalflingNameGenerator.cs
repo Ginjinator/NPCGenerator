@@ -6,23 +6,17 @@ using System.Threading.Tasks;
 
 namespace NameGenerator
 {
-    class DwarvenNameGenerator : NameGenerator
+    class HalflingNameGenerator : NameGenerator
     {
-        List<string> maleNames = new List<string> {"Alberich", "Baern", "Barendd", "Brottor",
-                                                    "Bruenor", "Dain", "Darrak", "Delg", "Eberk", "Einkil", "Fargrim",
-                                                    "Flint", "Gardain", "Harbek", "Kildrak", "Morgran", "Orsik",
-                                                    "Oskar", "Rangrim", "Rurik", "Taklinn", "Thoradin", "Thorin",
-                                                    "Tordek", "Traubon", "Travok", "Ulfgar", "Veit", "Vondal"};
-
-        List<string> femaleNames = new List<string> {"Amber", "Artin", "Audhild", "Bardryn",
-                                                    "Dagnal", "Diesa", "Eldeth", "Falkrunn", "Finellen", "Gunnloda",
-                                                    "Gurdis", "Helja", "Hlin", "Kathra", "Kristryd", "Ilde", "Liftrasa",
-                                                    "Mardred", "Riswynn", "Sannl", "Torbera", "Torgga", "Vistra"};
-
-        List<string> clanNames = new List<string> {"Balderk", "Battlehammer", "Brawnanvil",
-                                                    "Dankil", "Fireforge", "Frostbeard", "Gorunn", "Holderhek",
-                                                    "Ironfist", "Loderr", "Lutgehr", "Rumnaheim", "Strakeln",
-                                                    "Torunn", "Ungart"};
+        List<string> maleNames = new List<string> {"Alton", "Ander", "Cade", "Corrin", "Eldon", "Errich",
+            "Finnan", "Garret", "Lindal", "Lyle", "Merric", "Milo", "Osborn",
+            "Perrin", "Reed", "Roscoe", "Wellby"};
+        List<string> femaleNames = new List<string> {"Andry", "Bree", "Callie", "Cora", "Euphemia",
+            "Jillian", "Kithri", "Lavinia", "Lidda", "Merla", "Nedda", "Paela",
+            "Portia", "Seraphina", "Shaena", "Trym", "Vani", "Verna"};
+        List<string> clanNames = new List<string> {"Brushgather", "Goodbarrel", "Greenbottle",
+            "High-hill", "Hilltopple", "Leagallow", "Tealeaf", "Thorngage",
+            "Tosscobble", "Underbough"};
 
         private string createdName = "";
         Random random = new Random();
@@ -77,5 +71,6 @@ namespace NameGenerator
             var clanName = firstHalf + secondHalf;
             return clanName;
         }
+
     }
 }

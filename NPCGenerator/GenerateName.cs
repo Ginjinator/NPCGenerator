@@ -48,9 +48,10 @@ namespace NameGenerator
             if (race.Equals("human", StringComparison.InvariantCultureIgnoreCase))
             {
                 HumanNameGenerator humanName = new HumanNameGenerator();
-                humanName.GenerateMaleName();
+                maleName = humanName.GenerateMaleName();
             }
-            else if (race.Equals("dwarf", StringComparison.InvariantCultureIgnoreCase)) {
+            else if (race.Equals("dwarf", StringComparison.InvariantCultureIgnoreCase))
+            {
                 DwarvenNameGenerator dwarvenName = new DwarvenNameGenerator();
                 maleName = dwarvenName.GenerateMaleName();
             }
@@ -64,6 +65,26 @@ namespace NameGenerator
                 TieflingNameGenerator tieflingName = new TieflingNameGenerator();
                 maleName = tieflingName.GenerateMaleName();
             }
+            else if (race.Equals("elf", StringComparison.InvariantCultureIgnoreCase))
+            {
+                ElvishNameGenerator elvishName = new ElvishNameGenerator();
+                maleName = elvishName.GenerateMaleName();
+            }
+            else if (race.Equals("gnome", StringComparison.InvariantCultureIgnoreCase))
+            {
+                GnomishNameGenerator gnomishName = new GnomishNameGenerator();
+                maleName = gnomishName.GenerateMaleName();
+            }
+            else if (race.Equals("halfling", StringComparison.InvariantCultureIgnoreCase))
+            {
+                HalflingNameGenerator halflingName = new HalflingNameGenerator();
+                maleName = halflingName.GenerateMaleName(); 
+            }
+            else if (race.Equals("half-orc", StringComparison.InvariantCultureIgnoreCase))
+            {
+                HalfOrcNameGenerator halfOrcName = new HalfOrcNameGenerator();
+                maleName = halfOrcName.GenerateMaleName();
+            }
 
             return maleName;
         }
@@ -74,7 +95,7 @@ namespace NameGenerator
             if (race.Equals("human", StringComparison.InvariantCultureIgnoreCase))
             {
                 HumanNameGenerator humanName = new HumanNameGenerator();
-                humanName.GenerateFemaleName();
+                femaleName = humanName.GenerateFemaleName();
             }
             else if (race.Equals("dwarf", StringComparison.InvariantCultureIgnoreCase))
             {
@@ -90,6 +111,26 @@ namespace NameGenerator
             {
                 TieflingNameGenerator tieflingName = new TieflingNameGenerator();
                 femaleName = tieflingName.GenerateFemaleName();
+            }
+            else if (race.Equals("elf", StringComparison.InvariantCultureIgnoreCase))
+            {
+                ElvishNameGenerator elvishName = new ElvishNameGenerator();
+                femaleName = elvishName.GenerateFemaleName();
+            }
+            else if (race.Equals("gnome", StringComparison.InvariantCultureIgnoreCase))
+            {
+                GnomishNameGenerator gnomishName = new GnomishNameGenerator();
+                femaleName = gnomishName.GenerateFemaleName();
+            }
+            else if (race.Equals("halfling", StringComparison.InvariantCultureIgnoreCase))
+            {
+                HalflingNameGenerator halflingName = new HalflingNameGenerator();
+                femaleName = halflingName.GenerateFemaleName();
+            }
+            else if (race.Equals("half-orc", StringComparison.InvariantCultureIgnoreCase))
+            {
+                HalfOrcNameGenerator halfOrcName = new HalfOrcNameGenerator();
+                femaleName = halfOrcName.GenerateFemaleName();
             }
 
             return femaleName;

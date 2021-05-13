@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PersonalityGenerator
 {
-    class Personality
+    public class Personality
     {
         private List<string> mainTraits;
         private List<string> minorPositiveTraits;

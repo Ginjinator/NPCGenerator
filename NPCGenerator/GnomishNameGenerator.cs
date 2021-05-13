@@ -6,23 +6,24 @@ using System.Threading.Tasks;
 
 namespace NameGenerator
 {
-    class DwarvenNameGenerator : NameGenerator
+    class GnomishNameGenerator : NameGenerator
     {
-        List<string> maleNames = new List<string> {"Alberich", "Baern", "Barendd", "Brottor",
-                                                    "Bruenor", "Dain", "Darrak", "Delg", "Eberk", "Einkil", "Fargrim",
-                                                    "Flint", "Gardain", "Harbek", "Kildrak", "Morgran", "Orsik",
-                                                    "Oskar", "Rangrim", "Rurik", "Taklinn", "Thoradin", "Thorin",
-                                                    "Tordek", "Traubon", "Travok", "Ulfgar", "Veit", "Vondal"};
+        List<string> maleNames = new List<string> {"Alvyn", "Boddynock", "Brocc", "Burgell",
+            "Dimble", "Eldon", "Erky", "Fonkin", "Frug", "Gerbo", "Gimble",
+            "Glim", "Jebeddo", "Kellen", "Namfoodle", "Orryn", "Roondar",
+            "Seebo", "Sindri", "Warryn", "Wrenn", "Zook"};
+        List<string> femaleNames = new List<string> {"Bimpnottin", "Breena", "Caramip", "Carlin",
+            "Donella", "Duvamil", "Ella", "Ellyjobell", "Ellywick", "Lilli",
+            "Loopmottin", "Lorilla", "Mardnab", "Nissa", "Nyx", "Oda", "Orla",
+            "Roywyn", "Shamil", "Tana", "Waywocket", "Zanna"};
+        List<string> clanNames = new List<string> {"Beren", "Daergel", "Folkor", "Garrick", "Nackle",
+            "Murnig", "Ningel", "Raulnor", "Scheppen", "Timbers", "Turen", "Abren",
+            "Aelnor", "Bachin", "Banilor", "Blackrock", "Blimth", "Danask", "Durim", "Fasketel", "Furnak",
+            "Galeb", "Greatorm", "Grosko", "Hardin", "Hymnir", "Jarnak", "Kellen", "Kyri", "Lundor", "Merren",
+            "Nessik", "Pernor", "Quindal", "Ranadal", "Rivenstone", "Rustek", "Rutvor", "Sasken", "Shasto",
+            "Skerrit", "Tamble", "Tavartarr", "Terrick", "Turco", "Urvor", "Uvarkk", "Vandek", "Vilio", "Walnir",
+            "Whitehorn", "Yimble"};
 
-        List<string> femaleNames = new List<string> {"Amber", "Artin", "Audhild", "Bardryn",
-                                                    "Dagnal", "Diesa", "Eldeth", "Falkrunn", "Finellen", "Gunnloda",
-                                                    "Gurdis", "Helja", "Hlin", "Kathra", "Kristryd", "Ilde", "Liftrasa",
-                                                    "Mardred", "Riswynn", "Sannl", "Torbera", "Torgga", "Vistra"};
-
-        List<string> clanNames = new List<string> {"Balderk", "Battlehammer", "Brawnanvil",
-                                                    "Dankil", "Fireforge", "Frostbeard", "Gorunn", "Holderhek",
-                                                    "Ironfist", "Loderr", "Lutgehr", "Rumnaheim", "Strakeln",
-                                                    "Torunn", "Ungart"};
 
         private string createdName = "";
         Random random = new Random();

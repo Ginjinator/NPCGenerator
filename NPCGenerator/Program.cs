@@ -10,7 +10,7 @@ namespace NameGenerator
     {
         static void Main(string[] args)
         {
-            List<string> racesList = new List<string> { "Human", "Dwarf", "Dragonborn", "Tiefling" };
+            List<string> racesList = new List<string> { "Human", "Dwarf", "Dragonborn", "Tiefling", "Elf", "Gnome", "Halfling", "Half-Orc" };
             var gender = "";
             var race = "";
 

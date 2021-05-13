@@ -4,29 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F040D90F-83FC-44F2-A6A2-A571C7C10A6E}</ProjectGuid>
+    <ProjectGuid>{6C0735E1-2ED4-4A37-B515-A1217D7E5C73}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>NameGenerator</RootNamespace>
-    <AssemblyName>NameGenerator</AssemblyName>
+    <RootNamespace>GeneratePerson</RootNamespace>
+    <AssemblyName>GeneratePerson</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <PublishUrl>publish\</PublishUrl>
-    <Install>true</Install>
-    <InstallFrom>Disk</InstallFrom>
-    <UpdateEnabled>false</UpdateEnabled>
-    <UpdateMode>Foreground</UpdateMode>
-    <UpdateInterval>7</UpdateInterval>
-    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
-    <UpdatePeriodically>false</UpdatePeriodically>
-    <UpdateRequired>false</UpdateRequired>
-    <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
-    <UseApplicationTrust>false</UseApplicationTrust>
-    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -58,39 +43,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ElvishNameGenerator.cs" />
-    <Compile Include="DragonbornNameGenerator.cs" />
-    <Compile Include="DwarvenNameGenerator.cs" />
-    <Compile Include="GenerateName.cs" />
-    <Compile Include="GnomishNameGenerator.cs" />
-    <Compile Include="HalflingNameGenerator.cs" />
-    <Compile Include="HalfOrcNameGenerator.cs" />
-    <Compile Include="HumanNameGenerator.cs" />
-    <Compile Include="NameGenerator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TieflingNameGenerator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\NPCGenerator\NameGenerator.csproj">
+      <Project>{f040d90f-83fc-44f2-a6a2-a571c7c10a6e}</Project>
+      <Name>NameGenerator</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PersonalityGenerator\PersonalityGenerator.csproj">
       <Project>{7929377b-ff2b-45a6-b86a-657270a2af5b}</Project>
       <Name>PersonalityGenerator</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
-      <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1</ProductName>
-      <Install>false</Install>
-    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

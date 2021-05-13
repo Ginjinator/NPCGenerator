@@ -28,8 +28,8 @@ namespace NameGenerator
         public override string GenerateMaleName()
         {
             int halfOfName = 0;
-            var name1 = maleNames[random.Next(0, maleNames.Count) - 1];
-            var name2 = maleNames[random.Next(0, maleNames.Count) - 1];
+            var name1 = maleNames[random.Next(0, maleNames.Count - 1)];
+            var name2 = maleNames[random.Next(0, maleNames.Count - 1)];
 
             halfOfName = (name1.Length / 2);
             var firstHalf = name1.Substring(0, halfOfName);
@@ -46,8 +46,8 @@ namespace NameGenerator
         public override string GenerateFemaleName()
         {
             int halfOfName = 0;
-            var name1 = femaleNames[random.Next(0, femaleNames.Count) - 1];
-            var name2 = femaleNames[random.Next(0, femaleNames.Count) - 1];
+            var name1 = femaleNames[random.Next(0, femaleNames.Count - 1)];
+            var name2 = femaleNames[random.Next(0, femaleNames.Count - 1)];
 
             halfOfName = (name1.Length / 2);
             var firstHalf = name1.Substring(0, halfOfName);
@@ -64,9 +64,9 @@ namespace NameGenerator
         public string GenerateClanName()
         {
             int thirdOfName = 0;
-            var name1 = clanNames[random.Next(0, clanNames.Count) - 1];
-            var name2 = clanNames[random.Next(0, clanNames.Count) - 1];
-            var name3 = clanNames[random.Next(0, clanNames.Count) - 1];
+            var name1 = clanNames[random.Next(0, clanNames.Count - 1)];
+            var name2 = clanNames[random.Next(0, clanNames.Count - 1)];
+            var name3 = clanNames[random.Next(0, clanNames.Count - 1)];
 
             thirdOfName = (name1.Length / 3);
             var firstThird = name1.Substring(0, thirdOfName);

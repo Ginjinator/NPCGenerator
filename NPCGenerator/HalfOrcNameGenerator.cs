@@ -6,15 +6,14 @@ using System.Threading.Tasks;
 
 namespace NameGenerator
 {
-    class TieflingNameGenerator : NameGenerator
+    class HalfOrcNameGenerator : NameGenerator
     {
-        List<string> maleNames = new List<string> {"Baggi", "Emen", "Engong", "Kansif",
-                                                    "Myev", "Neega", "Ovak", "Ownka", "Shautha", "Sutha", "Vola",
-                                                    "Volen", "Yevelda"};
+        List<string> maleNames = new List<string> {"Dench", "Feng", "Gell", "Henk", "Holg", "Imsh",
+            "Keth", "Krusk", "Mhurren", "Ront", "Shump", "Thokk"};
+        List<string> femaleNames = new List<string> {"Baggi", "Emen", "Engong", "Kansif",
+            "Myev", "Neega", "Ovak", "Ownka", "Shautha", "Sutha", "Vola",
+            "Volen", "Yevelda"};
 
-        List<string> femaleNames = new List<string> {"Akta", "Anakis", "Bryseis", "Criella",
-                                                    "Damaia", "Ea", "Kallista", "Lerissa", "Makaria", "Nemeia",
-                                                    "Orianna", "Phelaia", "Rieta"};
         private string createdName = "";
         Random random = new Random();
 

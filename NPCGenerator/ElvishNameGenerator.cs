@@ -6,23 +6,22 @@ using System.Threading.Tasks;
 
 namespace NameGenerator
 {
-    class DwarvenNameGenerator : NameGenerator
+    class ElvishNameGenerator : NameGenerator
     {
-        List<string> maleNames = new List<string> {"Alberich", "Baern", "Barendd", "Brottor",
-                                                    "Bruenor", "Dain", "Darrak", "Delg", "Eberk", "Einkil", "Fargrim",
-                                                    "Flint", "Gardain", "Harbek", "Kildrak", "Morgran", "Orsik",
-                                                    "Oskar", "Rangrim", "Rurik", "Taklinn", "Thoradin", "Thorin",
-                                                    "Tordek", "Traubon", "Travok", "Ulfgar", "Veit", "Vondal"};
-
-        List<string> femaleNames = new List<string> {"Amber", "Artin", "Audhild", "Bardryn",
-                                                    "Dagnal", "Diesa", "Eldeth", "Falkrunn", "Finellen", "Gunnloda",
-                                                    "Gurdis", "Helja", "Hlin", "Kathra", "Kristryd", "Ilde", "Liftrasa",
-                                                    "Mardred", "Riswynn", "Sannl", "Torbera", "Torgga", "Vistra"};
-
-        List<string> clanNames = new List<string> {"Balderk", "Battlehammer", "Brawnanvil",
-                                                    "Dankil", "Fireforge", "Frostbeard", "Gorunn", "Holderhek",
-                                                    "Ironfist", "Loderr", "Lutgehr", "Rumnaheim", "Strakeln",
-                                                    "Torunn", "Ungart"};
+        List<string> maleNames = new List<string> {"Adran", "Aelar", "Aramil", "Arannis",
+            "Aust", "Beiro", "Berrian", "Carric" , "Enialis", "Erdan", "Erevan",
+            "Galinndan", "Hadarai", "Heian", "Himo", "Immeral", "Ivellios",
+            "Laucian", "Mindartis", "Paelias", "Peren", "Quarion", "Riardon",
+            "Rolen", "Soveliss", "Thamior", "Tharivol", "Theren", "Varis"};
+        List<string> femaleNames = new List<string> {"Adrie", "Althaea", "Anastrianna",
+            "Andraste", "Antinua", "Bethrynna", "Birel", "Caelynn",
+            "Drusilia", "Enna", "Felosial", "Ielenia", "Jelenneth", "Keyleth",
+            "Leshanna", "Lia", "Meriele", "Meialee", "Naivara", "Quelenna",
+            "Quillathe", "Sariel", "Shanairra", "Shava", "Silaqui",
+            "Theirastra", "Thia", "Vadania", "Valanthe", "Xanaphia"};
+        List<string> familyNames = new List<string> {"Amakiir", "Amastacia", "Galanodel",
+            "Holimion", "Ilphelkiir", "Liadon", "Meliamne",
+            "Nai'lo", "Siannodel", "Xiloscient"};
 
         private string createdName = "";
         Random random = new Random();
@@ -39,7 +38,7 @@ namespace NameGenerator
             var secondHalf = name2.Substring(halfOfName);
 
             createdName = firstHalf + secondHalf;
-            var clanName = " " + GenerateClanName();
+            var clanName = " " + GenerateFamilyName();
 
             createdName += clanName;
             return createdName;
@@ -57,17 +56,17 @@ namespace NameGenerator
             var secondHalf = name2.Substring(halfOfName);
 
             createdName = firstHalf + secondHalf;
-            var clanName = " " + GenerateClanName();
+            var clanName = " " + GenerateFamilyName();
 
             createdName += clanName;
             return createdName;
         }
 
-        public string GenerateClanName()
+        public string GenerateFamilyName()
         {
             int halfOfName = 0;
-            var name1 = clanNames[random.Next(0, clanNames.Count - 1)];
-            var name2 = clanNames[random.Next(0, clanNames.Count - 1)];
+            var name1 = familyNames[random.Next(0, familyNames.Count - 1)];
+            var name2 = familyNames[random.Next(0, familyNames.Count - 1)];
 
             halfOfName = (name1.Length / 2);
             var firstHalf = name1.Substring(0, halfOfName);
