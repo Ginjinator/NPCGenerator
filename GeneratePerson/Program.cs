@@ -20,15 +20,13 @@ namespace GeneratePerson
             Console.WriteLine();
             while (shouldContinue)
             {
-                //TODO: Allow to create more of the recent choice
                 Console.WriteLine("Create New Person: ");
                 Console.WriteLine("1: Completely Random");
                 Console.WriteLine("2: Pick Race and Gender");
                 Console.WriteLine("Choice: ");
 
-                int caseSwitch = 0;
                 var userChoice = Console.ReadLine();
-                bool isNum = int.TryParse(userChoice, out caseSwitch);
+                bool isNum = int.TryParse(userChoice, out int caseSwitch);
 
                 switch (caseSwitch)
                 {
@@ -157,7 +155,10 @@ namespace GeneratePerson
                     }
                     else
                     {
-                        Console.WriteLine("Invalid Answer");
+                        //TODO: Enhance Redo Functionality
+                        Console.WriteLine("Invalid Answer moving on");
+                        redoList = false;
+                        redo = false;
                         break;
                     }
                 }
@@ -181,7 +182,10 @@ namespace GeneratePerson
                     }
                     else
                     {
-                        Console.WriteLine("Invalid Answer");
+                        Console.WriteLine("Invalid Answer moving on");
+                        redoSingle = false;
+                        redo = false;
+                        break;
                     }
                 }
             }
