@@ -30,53 +30,84 @@ namespace NameGenerator
 
         public override string GenerateMaleName()
         {
-            int halfOfName = 0;
-            var name1 = maleNames[random.Next(0, maleNames.Count - 1)];
-            var name2 = maleNames[random.Next(0, maleNames.Count - 1)];
+            var pickFullName = random.Next(1, 5);
+            if (pickFullName == 5)
+            {
+                createdName = maleNames[random.Next(0, maleNames.Count - 1)];
+                var clanName = " " + GenerateClanName();
+                createdName += clanName;
+                return createdName;
+            }
+            else
+            {
+                int halfOfName = 0;
+                var name1 = maleNames[random.Next(0, maleNames.Count - 1)];
+                var name2 = maleNames[random.Next(0, maleNames.Count - 1)];
 
-            halfOfName = (name1.Length / 2);
-            var firstHalf = name1.Substring(0, halfOfName);
-            halfOfName = (name2.Length / 2);
-            var secondHalf = name2.Substring(halfOfName);
+                halfOfName = (name1.Length / 2);
+                var firstHalf = name1.Substring(0, halfOfName);
+                halfOfName = (name2.Length / 2);
+                var secondHalf = name2.Substring(halfOfName);
 
-            createdName = firstHalf + secondHalf;
-            var clanName = " " + GenerateClanName();
+                createdName = firstHalf + secondHalf;
+                var clanName = " " + GenerateClanName();
 
-            createdName += clanName;
-            return createdName;
+                createdName += clanName;
+                return createdName;
+            }
         }
 
         public override string GenerateFemaleName()
         {
-            int halfOfName = 0;
-            var name1 = femaleNames[random.Next(0, femaleNames.Count - 1)];
-            var name2 = femaleNames[random.Next(0, femaleNames.Count - 1)];
+            var pickFullName = random.Next(1, 5);
+            if (pickFullName >= 4)
+            {
+                createdName = femaleNames[random.Next(0, femaleNames.Count - 1)];
+                var clanName = " " + GenerateClanName();
+                createdName += clanName;
+                return createdName;
+            }
+            else
+            {
+                int halfOfName = 0;
+                var name1 = femaleNames[random.Next(0, femaleNames.Count - 1)];
+                var name2 = femaleNames[random.Next(0, femaleNames.Count - 1)];
 
-            halfOfName = (name1.Length / 2);
-            var firstHalf = name1.Substring(0, halfOfName);
-            halfOfName = (name2.Length / 2);
-            var secondHalf = name2.Substring(halfOfName);
+                halfOfName = (name1.Length / 2);
+                var firstHalf = name1.Substring(0, halfOfName);
+                halfOfName = (name2.Length / 2);
+                var secondHalf = name2.Substring(halfOfName);
 
-            createdName = firstHalf + secondHalf;
-            var clanName = " " + GenerateClanName();
+                createdName = firstHalf + secondHalf;
+                var clanName = " " + GenerateClanName();
 
-            createdName += clanName;
-            return createdName;
+                createdName += clanName;
+                return createdName;
+            }
         }
 
         public string GenerateClanName()
         {
-            int halfOfName = 0;
-            var name1 = clanNames[random.Next(0, clanNames.Count - 1)];
-            var name2 = clanNames[random.Next(0, clanNames.Count - 1)];
+            var pickFullName = random.Next(1, 5);
+            if (pickFullName == 5)
+            {
+                var clanName = " " + clanNames[random.Next(0, clanNames.Count - 1)];
+                return clanName;
+            }
+            else
+            {
+                int halfOfName = 0;
+                var name1 = clanNames[random.Next(0, clanNames.Count - 1)];
+                var name2 = clanNames[random.Next(0, clanNames.Count - 1)];
 
-            halfOfName = (name1.Length / 2);
-            var firstHalf = name1.Substring(0, halfOfName);
-            halfOfName = (name2.Length / 2);
-            var secondHalf = name2.Substring(halfOfName);
+                halfOfName = (name1.Length / 2);
+                var firstHalf = name1.Substring(0, halfOfName);
+                halfOfName = (name2.Length / 2);
+                var secondHalf = name2.Substring(halfOfName);
 
-            var clanName = firstHalf + secondHalf;
-            return clanName;
+                var clanName = firstHalf + secondHalf;
+                return clanName;
+            }
         }
     }
 }

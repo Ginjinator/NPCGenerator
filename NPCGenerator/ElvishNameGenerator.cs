@@ -28,24 +28,43 @@ namespace NameGenerator
 
         public override string GenerateMaleName()
         {
-            int halfOfName = 0;
-            var name1 = maleNames[random.Next(0, maleNames.Count - 1)];
-            var name2 = maleNames[random.Next(0, maleNames.Count - 1)];
+            var pickFullName = random.Next(1, 5);
+            if (pickFullName == 5)
+            {
+                createdName = maleNames[random.Next(0, maleNames.Count - 1)];
+                var familyName = " " + GenerateFamilyName();
+                createdName += familyName;
+                return createdName;
+            }
+            else
+            {
+                int halfOfName = 0;
+                var name1 = maleNames[random.Next(0, maleNames.Count - 1)];
+                var name2 = maleNames[random.Next(0, maleNames.Count - 1)];
 
-            halfOfName = (name1.Length / 2);
-            var firstHalf = name1.Substring(0, halfOfName);
-            halfOfName = (name2.Length / 2);
-            var secondHalf = name2.Substring(halfOfName);
+                halfOfName = (name1.Length / 2);
+                var firstHalf = name1.Substring(0, halfOfName);
+                halfOfName = (name2.Length / 2);
+                var secondHalf = name2.Substring(halfOfName);
 
-            createdName = firstHalf + secondHalf;
-            var clanName = " " + GenerateFamilyName();
+                createdName = firstHalf + secondHalf;
+                var clanName = " " + GenerateFamilyName();
 
-            createdName += clanName;
-            return createdName;
+                createdName += clanName;
+                return createdName;
+            }
         }
 
         public override string GenerateFemaleName()
         {
+            var pickFullName = random.Next(1, 5);
+            if (pickFullName == 5)
+            {
+                createdName = femaleNames[random.Next(0, femaleNames.Count - 1)];
+                var familyName = " " + GenerateFamilyName();
+                createdName += familyName;
+                return createdName;
+            }
             int halfOfName = 0;
             var name1 = femaleNames[random.Next(0, femaleNames.Count - 1)];
             var name2 = femaleNames[random.Next(0, femaleNames.Count - 1)];
@@ -64,17 +83,26 @@ namespace NameGenerator
 
         public string GenerateFamilyName()
         {
-            int halfOfName = 0;
-            var name1 = familyNames[random.Next(0, familyNames.Count - 1)];
-            var name2 = familyNames[random.Next(0, familyNames.Count - 1)];
+            var pickFullName = random.Next(1, 5);
+            if (pickFullName == 5)
+            {
+                var familyName = " " + familyNames[random.Next(0, familyNames.Count - 1)];
+                return familyName;
+            }
+            else
+            {
+                int halfOfName = 0;
+                var name1 = familyNames[random.Next(0, familyNames.Count - 1)];
+                var name2 = familyNames[random.Next(0, familyNames.Count - 1)];
 
-            halfOfName = (name1.Length / 2);
-            var firstHalf = name1.Substring(0, halfOfName);
-            halfOfName = (name2.Length / 2);
-            var secondHalf = name2.Substring(halfOfName);
+                halfOfName = (name1.Length / 2);
+                var firstHalf = name1.Substring(0, halfOfName);
+                halfOfName = (name2.Length / 2);
+                var secondHalf = name2.Substring(halfOfName);
 
-            var clanName = firstHalf + secondHalf;
-            return clanName;
+                var familyName = firstHalf + secondHalf;
+                return familyName;
+            }
         }
     }
 }

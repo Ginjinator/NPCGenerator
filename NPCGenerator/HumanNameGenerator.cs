@@ -25,13 +25,13 @@ namespace NameGenerator
         private string createdName = "";
         Random random = new Random();
 
+        //TODO: Possible: Move all name generation to common class, and call that with gender and race passed in
         public override string GenerateMaleName()
         {
-            // TODO: Add below functionality to all races
             // Chance to get full name from list above
             // breaks out if using full name from list
-            var fullName = random.Next(1, 5);
-            if (fullName >= 4)
+            var pickFullName = random.Next(1, 5);
+            if (pickFullName >= 4)
             {
                 createdName = maleNames[random.Next(0, maleNames.Count - 1)];
                 var familyName = " " + GenerateFamilyName();
@@ -61,10 +61,10 @@ namespace NameGenerator
         {
             // Chance to get full name from list above
             // breaks out if using full name from list
-            var fullName = random.Next(1, 5);
-            if (fullName == 5)
+            var pickFullName = random.Next(1, 5);
+            if (pickFullName == 5)
             {
-                createdName = femaleNames[random.Next(0, maleNames.Count - 1)];
+                createdName = femaleNames[random.Next(0, femaleNames.Count - 1)];
                 var familyName = " " + GenerateFamilyName();
                 createdName += familyName;
                 return createdName;
@@ -81,9 +81,9 @@ namespace NameGenerator
                 var secondHalf = name2.Substring(halfOfName);
 
                 createdName = firstHalf + secondHalf;
-                var clanName = " " + GenerateFamilyName();
+                var family = " " + GenerateFamilyName();
 
-                createdName += clanName;
+                createdName += family;
                 return createdName;
             }
         }
@@ -95,10 +95,8 @@ namespace NameGenerator
             var fullName = random.Next(1, 5);
             if (fullName >= 4)
             {
-                // TODO: Fix Duplicating when in here
-                var familyName = " " + familyNames[random.Next(0, maleNames.Count - 1)];
-                createdName += familyName;
-                return createdName;
+                var familyName = " " + familyNames[random.Next(0, familyNames.Count - 1)];
+                return familyName;
             }
             else
             {
@@ -111,8 +109,8 @@ namespace NameGenerator
                 halfOfName = (name2.Length / 2);
                 var secondHalf = name2.Substring(halfOfName);
 
-                var clanName = firstHalf + secondHalf;
-                return clanName;
+                var familyName = firstHalf + secondHalf;
+                return familyName;
             }
         }
     }

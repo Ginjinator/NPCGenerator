@@ -77,12 +77,13 @@ namespace GeneratePerson
         private static void GenerateFixed()
         {
             bool accept = false;
+            bool redo = true;
             string gender = "";
             string race = "";
             
             while (!accept)
             {
-                Console.WriteLine("Pick a gender: ");
+                Console.WriteLine("\nPick a gender: ");
                 gender = Console.ReadLine();
                 if (gender.Equals("male", StringComparison.InvariantCultureIgnoreCase) || gender.Equals("female", StringComparison.InvariantCultureIgnoreCase))
                 {
@@ -121,24 +122,68 @@ namespace GeneratePerson
                     racesList.ForEach(Console.WriteLine);
                 }
             }
-
-            GenerateName newName = new GenerateName(gender, race);
-            var makeListAnswer = "";
-            Console.WriteLine("List of 10?: ");
-            makeListAnswer = Console.ReadLine();
-            if (makeListAnswer.Equals("y", StringComparison.InvariantCultureIgnoreCase) || makeListAnswer.Equals("yes", StringComparison.InvariantCultureIgnoreCase))
+            bool redoList = false;
+            bool redoSingle = false;
+            while (redo)
             {
-                for(int i = 0; i <= 9; i++)
-                {
-                    Console.WriteLine(newName.getName());
-                    newName = new GenerateName(gender, race);
-                    //Wait - Too fast and generates same name without this
-                    System.Threading.Thread.Sleep(100);
+                GenerateName newName;
+                var makeListAnswer = "";
+                if (!redoList && !redoSingle) {
+                    Console.WriteLine("List of 10?: ");
+                    makeListAnswer = Console.ReadLine();
                 }
-            }
-            else
-            {
-                Console.WriteLine(newName.getName());
+                if (makeListAnswer.Equals("y", StringComparison.InvariantCultureIgnoreCase) || makeListAnswer.Equals("yes", StringComparison.InvariantCultureIgnoreCase) || redoList)
+                {
+                    Console.WriteLine("\nList of names for: " + race + " " + gender);
+                    for (int i = 0; i <= 9; i++)
+                    {
+                        newName = new GenerateName(gender, race);
+                        Console.WriteLine(newName.getName());
+                        //Wait - Too fast and generates same name without this
+                        System.Threading.Thread.Sleep(100);
+                    }
+                    Console.WriteLine("\nRedo List?: ");
+                    var input = Console.ReadLine();
+                    if (input.Equals("y", StringComparison.InvariantCultureIgnoreCase) || input.Equals("yes", StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        redoList = true;
+                        redo = true;
+                    }
+                    else if (input.Equals("n", StringComparison.InvariantCultureIgnoreCase) || input.Equals("no", StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        redoList = false;
+                        redo = false;
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid Answer");
+                        break;
+                    }
+                }
+                else if (makeListAnswer.Equals("n", StringComparison.InvariantCultureIgnoreCase) || makeListAnswer.Equals("no", StringComparison.InvariantCultureIgnoreCase) || redoSingle)
+                {
+                    newName = new GenerateName(gender, race);
+                    Console.WriteLine(race + " " + gender + ":");
+                    Console.WriteLine(newName.getName());
+                    Console.WriteLine("\nRedo Single?: ");
+                    var input = Console.ReadLine();
+                    if (input.Equals("y", StringComparison.InvariantCultureIgnoreCase) || input.Equals("yes", StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        redoSingle = true;
+                        redo = true;
+                    }
+                    else if (input.Equals("n", StringComparison.InvariantCultureIgnoreCase) || input.Equals("no", StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        redoSingle = false;
+                        redo = false;
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid Answer");
+                    }
+                }
             }
             //Personality personality = new Personality();
 
@@ -159,8 +204,7 @@ namespace GeneratePerson
             accept = false;
             while (!accept)
             {
-                Console.WriteLine("");
-                Console.WriteLine("Continue?");
+                Console.WriteLine("\nContinue?");
                 var answer = Console.ReadLine();
                 if (answer.Equals("yes", StringComparison.InvariantCultureIgnoreCase) || answer.Equals("y", StringComparison.InvariantCultureIgnoreCase))
                 {
