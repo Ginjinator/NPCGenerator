@@ -53,12 +53,12 @@ namespace GeneratePerson
             string gender = "";
             string race = "";
 
-            int maleOrFemale = random.Next(1, 2);
-            if (maleOrFemale == 1)
+            int maleOrFemale = random.Next(2);
+            if (maleOrFemale == 0)
             {
                 gender = "male";
             }
-            if (maleOrFemale == 2)
+            if (maleOrFemale == 1)
             {
                 gender = "female";
             }
